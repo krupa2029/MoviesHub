@@ -1,9 +1,11 @@
 import Layout from "./components/Layout/Layout";
+import Movies from "./components/Movies/Movies";
+
 
 function App() {
   return (
     <Layout>
-      <p>Hiii...</p>
+      <Movies/>
     </Layout>
   );
 }
