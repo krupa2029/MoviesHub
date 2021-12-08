@@ -5,13 +5,13 @@ const MainHeader = (props) => {
   return (
     <header className={classes.header}>
       <HeaderLogo/>
-      <nav>
+      {/* <nav>
         <ul>
           <li>
             <button>Search Button</button> 
           </li>
         </ul>
-      </nav>
+      </nav> */}
     </header>
   );
 };
