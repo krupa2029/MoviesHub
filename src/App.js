@@ -1,11 +1,10 @@
 import Layout from "./components/Layout/Layout";
-import Movies from "./components/Movies/Movies";
-
+import LatestMovies from "./components/Movies/LatestMovies";
 
 function App() {
   return (
     <Layout>
-      <Movies/>
+      <LatestMovies />
     </Layout>
   );
 }
