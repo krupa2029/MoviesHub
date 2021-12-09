@@ -1,12 +1,14 @@
 import Card from "../UI/Card/Card";
 import classes from "./MovieCard.module.css";
+import { IMG_API } from "../../lib/api";
 
 const MoviesCard = (props) => {
   return (
     <Card>
       <div className={classes.img}>
-        <img src={props.imgsrc} alt={props.alt || "Image"} />
+        <img src={IMG_API + props.imgsrc} alt={props.alt || "Image"} />
       </div>
+
       <div className={classes.title}>
         <span>{props.title}</span>
       </div>
@@ -15,8 +17,8 @@ const MoviesCard = (props) => {
         <p>IMDb Rating: {props.imdb_rating}/10</p>
         <p>Release Year: {props.release_year}</p>
       </div>
-      
-      <div className={classes['button-container']}>
+
+      <div className={classes["button-container"]}>
         <button className={classes.button}>Show More</button>
       </div>
     </Card>
