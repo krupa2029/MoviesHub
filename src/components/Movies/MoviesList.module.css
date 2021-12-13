@@ -4,5 +4,5 @@
     /* flex-grow: 1; */
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    background: #3f3f3f;
+    background: #000000;
 }
