@@ -21,3 +21,21 @@ export async function getLatestMovies() {
 
   return responseData;
 }
+
+export async function getMovieDetail(movie_id) {
+  const response = await fetch(
+    `${BASE_URL}/movie/${movie_id}?api_key=${API_KEY}&language=en-US&append_to_response=videos`
+  );
+  const loadedMovieDetail = await response.json();
+
+  if (!response.ok) {
+    throw new Error(loadedMovieDetail.message || "Could not fetch Movie-Data.");
+  }
+
+  // const loadedQuote = {
+  //   id: quoteId,
+  //   ...data,
+  // };
+
+  return loadedMovieDetail;
+}
