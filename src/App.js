@@ -1,11 +1,39 @@
+import { Suspense } from "react";
+import { Redirect, Route, Switch } from "react-router";
 import Layout from "./components/Layout/Layout";
-import LatestMovies from "./components/Movies/LatestMovies";
+import LoadingSpinner from "./components/UI/LoadingSpinner/LoadingSpinner";
+import HomePage from "./pages/HomePage";
+import MovieDetailPage from "./pages/MovieDetailPage";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
+    
     <Layout>
-      <LatestMovies />
-    </Layout>
+    <Suspense
+      fallback={
+        <div className="centered">
+          <LoadingSpinner />
+        </div>
+      }
+    >
+      <Switch>
+        <Route path="/" exact>
+          <Redirect to="/movies" />
+        </Route>
+        <Route path="/movies" exact>
+          <HomePage />
+        </Route>
+        <Route path="/movies/:movieId">
+          <MovieDetailPage />
+        </Route>
+       
+        <Route path="*">
+          <NotFound />
+        </Route>
+      </Switch>
+    </Suspense>
+  </Layout>
   );
 }
 
