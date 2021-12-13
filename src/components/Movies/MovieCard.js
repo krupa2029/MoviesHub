@@ -1,6 +1,7 @@
 import Card from "../UI/Card/Card";
 import classes from "./MovieCard.module.css";
 import { IMG_API } from "../../lib/api";
+import { Link } from "react-router-dom";
 
 const MoviesCard = (props) => {
   return (
@@ -13,14 +14,18 @@ const MoviesCard = (props) => {
         <span>{props.title}</span>
       </div>
       <div className={classes.discription}>
-        <p>Genre: {props.genre}</p>
+        {/* <p>Genre: {props.genre}</p> */}
         <p>IMDb Rating: {props.imdb_rating}/10</p>
-        <p>Release Year: {props.release_year}</p>
+        <p>Release Date: {props.release_year}</p>
       </div>
 
-      <div className={classes["button-container"]}>
+      {/* <div className={classes["button-container"]}>
         <button className={classes.button}>Show More</button>
-      </div>
+      </div> */}
+
+      <Link className='btn' to={`/movies/${props.id}`}>
+        Show Detail
+      </Link>
     </Card>
   );
 };
