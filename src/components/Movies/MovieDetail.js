@@ -1,4 +1,4 @@
-import { Fragment, useEffect} from "react";
+import { Fragment, useEffect } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import useHttp from "../../hooks/use-http";
@@ -40,27 +40,44 @@ const MovieDetail = () => {
       genre.push(loadedDetail.genres[id].name);
     }
   }
-  const movie_genre = genre.join(' / ');
-  
+  const movie_genre = genre.join(" / ");
 
-  const movieTrailer = loadedDetail.videos.results.find((element) => {
-    return (
-      element.site === "YouTube" &&
-      element.type === "Trailer" &&
-      element.official === true
+ let MovieTrailerVideo = (
+    <h2>{"Trailer of this movie is not available!!"}</h2>
+  );
+
+  if (loadedDetail.videos.results !== null) {
+    const movieTrailer = loadedDetail.videos.results.find((element) => {
+      return (
+        element.site === "YouTube" &&
+        element.type === "Trailer" &&
+        element.official === true
+      );
+    });
+
+    MovieTrailerVideo = (
+      <div className={classes.movie_trailer_container}>
+        <h2>Trailer: {movieTrailer.name}</h2>
+        <iframe
+          src={`https://www.youtube.com/embed/${movieTrailer.key}`}
+          scrolling="no"
+          frameBorder="0"
+          title="trailer"
+        ></iframe>
+      </div>
     );
-  });
+  }
 
   return (
     <Fragment>
       <div className={classes.container}>
         <div className={classes.back}>
-        <Link to="/movies" style={{ textDecoration: 'none' }}>
-          <h3 style={{ color:"white" }}>
-            <IoArrowBackCircleOutline />
-            <span>Back</span>
-          </h3>
-        </Link>
+          <Link to="/movies" style={{ textDecoration: "none" }}>
+            <h3 style={{ color: "white" }}>
+              <IoArrowBackCircleOutline />
+              <span>Back</span>
+            </h3>
+          </Link>
         </div>
 
         <div className={classes.movie_content_container}>
@@ -73,9 +90,7 @@ const MovieDetail = () => {
             </div>
           </div>
           <div className={classes.movie_content_container__column_2}>
-            <div className={classes.title}>
-              {loadedDetail.title}
-            </div>
+            <div className={classes.title}>{loadedDetail.title}</div>
             <div className={classes.discription}>
               <h3>Overview</h3>
               <p>{loadedDetail.overview}</p>
@@ -89,17 +104,7 @@ const MovieDetail = () => {
             </div>
           </div>
         </div>
-
-        <div className={classes.movie_trailer_container}>
-          <h2>Trailer: {movieTrailer.name}</h2>
-          <iframe
-            src={`https://www.youtube.com/embed/${movieTrailer.key}`}
-            scrolling="no"
-            frameBorder="0"
-            title="trailer"
-          ></iframe>
-        </div>
-        
+        {MovieTrailerVideo}
       </div>
     </Fragment>
   );
