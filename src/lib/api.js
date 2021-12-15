@@ -31,11 +31,19 @@ export async function getMovieDetail(movie_id) {
   if (!response.ok) {
     throw new Error(loadedMovieDetail.message || "Could not fetch Movie-Data.");
   }
-
-  // const loadedQuote = {
-  //   id: quoteId,
-  //   ...data,
-  // };
-
   return loadedMovieDetail;
+}
+
+export async function getSearchMovie(movie_name) {
+  const response = await fetch(
+    `${BASE_URL}/search/movie/?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${movie_name}`
+  );
+  const loadedSearchMovies = await response.json();
+
+  if (!response.ok) {
+    throw new Error(
+      loadedSearchMovies.message || "Could not find searched Movie."
+    );
+  }
+  return loadedSearchMovies;
 }
