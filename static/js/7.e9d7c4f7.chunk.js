@@ -1,0 +1,2 @@
+(this.webpackJsonpmoviehub=this.webpackJsonpmoviehub||[]).push([[7],{52:function(e,t,c){"use strict";c.r(t);var n=c(2);t.default=function(){return Object(n.jsx)("div",{className:"centered",children:Object(n.jsx)("p",{children:"Page Not Found!"})})}}}]);
+//# sourceMappingURL=7.e9d7c4f7.chunk.js.map

@@ -1,0 +1,36 @@
+{
+  "files": {
+    "static/css/0.b9f6c418.chunk.css": "/MoviesHub/static/css/0.b9f6c418.chunk.css",
+    "static/js/0.8bde175d.chunk.js": "/MoviesHub/static/js/0.8bde175d.chunk.js",
+    "static/js/0.8bde175d.chunk.js.map": "/MoviesHub/static/js/0.8bde175d.chunk.js.map",
+    "main.css": "/MoviesHub/static/css/main.e648d127.chunk.css",
+    "main.js": "/MoviesHub/static/js/main.49c01b85.chunk.js",
+    "main.js.map": "/MoviesHub/static/js/main.49c01b85.chunk.js.map",
+    "runtime-main.js": "/MoviesHub/static/js/runtime-main.cb69b7d7.js",
+    "runtime-main.js.map": "/MoviesHub/static/js/runtime-main.cb69b7d7.js.map",
+    "static/js/3.bb4882f1.chunk.js": "/MoviesHub/static/js/3.bb4882f1.chunk.js",
+    "static/js/3.bb4882f1.chunk.js.map": "/MoviesHub/static/js/3.bb4882f1.chunk.js.map",
+    "static/css/4.2c570bce.chunk.css": "/MoviesHub/static/css/4.2c570bce.chunk.css",
+    "static/js/4.d8065617.chunk.js": "/MoviesHub/static/js/4.d8065617.chunk.js",
+    "static/js/4.d8065617.chunk.js.map": "/MoviesHub/static/js/4.d8065617.chunk.js.map",
+    "static/js/5.fb8e483a.chunk.js": "/MoviesHub/static/js/5.fb8e483a.chunk.js",
+    "static/js/5.fb8e483a.chunk.js.map": "/MoviesHub/static/js/5.fb8e483a.chunk.js.map",
+    "static/js/6.05b16214.chunk.js": "/MoviesHub/static/js/6.05b16214.chunk.js",
+    "static/js/6.05b16214.chunk.js.map": "/MoviesHub/static/js/6.05b16214.chunk.js.map",
+    "static/js/7.e9d7c4f7.chunk.js": "/MoviesHub/static/js/7.e9d7c4f7.chunk.js",
+    "static/js/7.e9d7c4f7.chunk.js.map": "/MoviesHub/static/js/7.e9d7c4f7.chunk.js.map",
+    "static/js/8.167c6534.chunk.js": "/MoviesHub/static/js/8.167c6534.chunk.js",
+    "static/js/8.167c6534.chunk.js.map": "/MoviesHub/static/js/8.167c6534.chunk.js.map",
+    "index.html": "/MoviesHub/index.html",
+    "static/css/0.b9f6c418.chunk.css.map": "/MoviesHub/static/css/0.b9f6c418.chunk.css.map",
+    "static/css/4.2c570bce.chunk.css.map": "/MoviesHub/static/css/4.2c570bce.chunk.css.map",
+    "static/css/main.e648d127.chunk.css.map": "/MoviesHub/static/css/main.e648d127.chunk.css.map",
+    "static/js/3.bb4882f1.chunk.js.LICENSE.txt": "/MoviesHub/static/js/3.bb4882f1.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cb69b7d7.js",
+    "static/js/3.bb4882f1.chunk.js",
+    "static/css/main.e648d127.chunk.css",
+    "static/js/main.49c01b85.chunk.js"
+  ]
+}
