@@ -5,6 +5,7 @@ import LoadingSpinner from "./components/UI/LoadingSpinner/LoadingSpinner";
 import HomePage from "./pages/HomePage";
 import MovieDetailPage from "./pages/MovieDetailPage";
 import NotFound from "./pages/NotFound";
+import SearchedMovie from "./pages/SearchedMovie";
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
         </Route>
         <Route path="/movies/:movieId">
           <MovieDetailPage />
+        </Route>
+        <Route path="/search/:search_term">
+          <SearchedMovie/>
         </Route>
        
         <Route path="*">
