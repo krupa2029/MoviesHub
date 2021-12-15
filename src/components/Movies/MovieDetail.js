@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef } from "react";
+import { Fragment, useEffect} from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import useHttp from "../../hooks/use-http";
@@ -40,7 +40,8 @@ const MovieDetail = () => {
       genre.push(loadedDetail.genres[id].name);
     }
   }
-  const movie_genre = genre.toString();
+  const movie_genre = genre.join(' / ');
+  
 
   const movieTrailer = loadedDetail.videos.results.find((element) => {
     return (
@@ -53,12 +54,14 @@ const MovieDetail = () => {
   return (
     <Fragment>
       <div className={classes.container}>
-        <Link to="/movies">
-          <h3 className={classes.back}>
+        <div className={classes.back}>
+        <Link to="/movies" style={{ textDecoration: 'none' }}>
+          <h3 style={{ color:"white" }}>
             <IoArrowBackCircleOutline />
             <span>Back</span>
           </h3>
         </Link>
+        </div>
 
         <div className={classes.movie_content_container}>
           <div className={classes.movie_content_container__column_1}>
@@ -71,14 +74,14 @@ const MovieDetail = () => {
           </div>
           <div className={classes.movie_content_container__column_2}>
             <div className={classes.title}>
-              <p>{loadedDetail.title}</p>
+              {loadedDetail.title}
             </div>
             <div className={classes.discription}>
               <h3>Overview</h3>
               <p>{loadedDetail.overview}</p>
               <p>Release Date: {loadedDetail.release_date}</p>
               <p>Language: {loadedDetail.original_language}</p>
-              {genre.length > 0 && <p>genre: {movie_genre}</p>}
+              {genre.length > 0 && <p>Genre: {movie_genre}</p>}
               <span>
                 Ratings: {loadedDetail.vote_average}
                 <BiStar />
@@ -91,8 +94,6 @@ const MovieDetail = () => {
           <h2>Trailer: {movieTrailer.name}</h2>
           <iframe
             src={`https://www.youtube.com/embed/${movieTrailer.key}`}
-            width="840"
-            height="500"
             scrolling="no"
             frameBorder="0"
             title="trailer"
