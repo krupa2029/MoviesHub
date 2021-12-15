@@ -15,8 +15,8 @@ const MoviesCard = (props) => {
       </div>
       <div className={classes.discription}>
         {/* <p>Genre: {props.genre}</p> */}
-        <p>IMDb Rating: {props.imdb_rating}/10</p>
-        <p>Release Date: {props.release_year}</p>
+        <p>Rating: {props.imdb_rating}/10</p>
+        <p>Released On: {props.release_year}</p>
       </div>
 
       {/* <div className={classes["button-container"]}>
@@ -24,7 +24,7 @@ const MoviesCard = (props) => {
       </div> */}
 
       <Link className='btn' to={`/movies/${props.id}`}>
-        Show Detail
+        Show More
       </Link>
     </Card>
   );
