@@ -1,17 +1,21 @@
-import { useRef } from "react";
+// import { useRef } from "react";
 import { useHistory } from "react-router-dom";
 import classes from './SearchButton.module.css';
 import { FaSearch } from 'react-icons/fa';
+import { useState } from "react/cjs/react.development";
 
 
 const SearchButton = () => {
-  const searchInputRef = useRef();
+  const [searchInput, setSearchInput] = useState('');
+  // const searchInputRef = useRef();
   let history = useHistory();
 
   const submitHandler = (event) => {
     event.preventDefault();
-    const searchString = searchInputRef.current.value;
-    history.push(`/search/${searchString}`);
+    // const searchString = searchInputRef.current.value;
+    history.push(`/search/${searchInput}`);
+    // searchInputRef.current.value='';
+    setSearchInput('')
   };
 
   return (
@@ -21,7 +25,9 @@ const SearchButton = () => {
           type="text"
           placeholder="Search..."
           id="search"
-          ref={searchInputRef}
+          value={searchInput}
+          // ref={searchInputRef}
+          onChange={(e) => setSearchInput(e.target.value)}
           className={classes.text_field}
         />
 
