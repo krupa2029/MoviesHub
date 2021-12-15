@@ -38,10 +38,10 @@ const SearchedMovie = () => {
     loadedSearchMovie &&
     loadedSearchMovie !== null
   ) {
-    console.log(loadedSearchMovie);
+    // console.log(loadedSearchMovie);
     return (
       <div className={classes["movies-container"]}>
-        <h2>Search Results...</h2>
+        <h2>Search Results for  '{search_term}'..</h2>
         <MoviesList MoviesData={loadedSearchMovie} />
       </div>
     );
