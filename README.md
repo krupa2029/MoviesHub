@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# MoviesHub
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A website that shows list of latest movies, movie details and searched movies. The application is built using HTML, CSS and React.js. 
+* Visit: **[Live Demo](https://movieshub-f5945.web.app/)**
 
-## Available Scripts
+## Used React Concepts
+* [React Components & Props](https://reactjs.org/docs/components-and-props.html): Reuseable components, Passing data through parent to child component using props.
+* [React Hooks](https://reactjs.org/docs/hooks-intro.html) : useEffect, useState, useReducer, useCallback, useRef
+* [React-Routing](https://reactrouter.com/) : react-router-dom @v.5
+* [Custom Hooks](https://reactjs.org/docs/hooks-custom.html) : use-http
 
-In the project directory, you can run:
 
-### `npm start`
+## Dependencies Installed
+* node_modules
+* react-router-dom@5
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## API Endpoints used to fetch data
+* Latest Movies : https://api.themoviedb.org/3/movie/latest?api_key=<<api_key>>&language=en-US
+* Movie Detail: https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US&append_to_response=videos
+* Search Movie: https://api.themoviedb.org/3/search/movie?api_key=<<api_key>>&language=en-US&page=1&query={movie_name}
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Pages
+* HomePage
+* Movie-Detail Page
+* SearchedMovie Page
 
-### `npm test`
+## HomePage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Home page displays list of latest movies. It displays movie title, ratigs, release date and movie poster.
 
-### `npm run build`
+Using nested components because it illustrates a nesting of components 3 levels deep. A Movie component has a MovieList component has a MovieCard component. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+HomePage is composed of the following components:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Header - A component contains  application title and searchbar. 
+* LatestMovies - The primary component that manages state for Movies and all underlying components. It is also responsible for connecting to api endpoint to retrieve movie data.
+* MovieList - Groups a collection of movies 
+* MovieCard - Represents a single instance of a movie
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![HomePage](https://github.com/krupa2029/MoviesHub/blob/main/src/assets/images/Screenshot%20(63).png)
 
-### `npm run eject`
+## Movie-Detail Page
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This page display the movie detail that is selected by user by clicking on "Show More" button of MovieCard.\
+It display Movie poster, movie title, Overview, ratings, release date, genres.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Movie-Detail Page is composed of the following components:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* Header - A component contains  application title and searchbar. 
+* MovieDetail - Manages states, sending request to detail endpoint, fetching movie deatil using movieId.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![HomePage](https://github.com/krupa2029/MoviesHub/blob/main/src/assets/images/Screenshot%20(64).png)
+![HomePage](https://github.com/krupa2029/MoviesHub/blob/main/src/assets/images/Screenshot%20(65).png)
 
-## Learn More
+## SearchedMovie Page
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The movies searched by user will be displayed in this page.  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+SearchedMovie Page is composed of the following components:
 
-### Code Splitting
+* SearchButton - Handle search input and manage page redirection
+* SearchedMovie - The primary component that is responsible to load SearchedMovie Page. Send request to the search endpoint when searchbutton is clicked. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![HomePage](https://github.com/krupa2029/MoviesHub/blob/main/src/assets/images/Search.png)
+  
+## Run
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   ```bash 
+   npm install
+   npm start
+   ```
