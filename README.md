@@ -4,7 +4,7 @@ A website that shows list of latest movies, movie details and searched movies. T
 * Visit: **[Live Demo](https://movieshub-f5945.web.app/)**
 
 ## Used React Concepts
-* [React Components & Props](https://reactjs.org/docs/components-and-props.html): Reuseable components, Passing data through parent to child component using props.
+* [React Components & Props](https://reactjs.org/docs/components-and-props.html): Reusable components, Passing data through parent to child component using props.
 * [React Hooks](https://reactjs.org/docs/hooks-intro.html) : useEffect, useState, useReducer, useCallback, useRef
 * [React-Routing](https://reactrouter.com/) : react-router-dom @v.5
 * [Custom Hooks](https://reactjs.org/docs/hooks-custom.html) : use-http
@@ -13,11 +13,6 @@ A website that shows list of latest movies, movie details and searched movies. T
 ## Dependencies Installed
 * node_modules
 * react-router-dom@5
-
-## API Endpoints used to fetch data
-* Latest Movies : https://api.themoviedb.org/3/movie/latest?api_key=<<api_key>>&language=en-US
-* Movie Detail: https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US&append_to_response=videos
-* Search Movie: https://api.themoviedb.org/3/search/movie?api_key=<<api_key>>&language=en-US&page=1&query={movie_name}
 
 ## Pages
 * HomePage
@@ -62,6 +57,11 @@ SearchedMovie Page is composed of the following components:
 * SearchedMovie - The primary component that is responsible to load SearchedMovie Page. Send request to the search endpoint when searchbutton is clicked. 
 
 ![HomePage](https://github.com/krupa2029/MoviesHub/blob/main/src/assets/images/Search.png)
+
+## API Endpoints used to fetch data
+* Latest Movies : https://api.themoviedb.org/3/movie/latest?api_key=<<api_key>>&language=en-US
+* Movie Detail: https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US&append_to_response=videos
+* Search Movie: https://api.themoviedb.org/3/search/movie?api_key=<<api_key>>&language=en-US&page=1&query={movie_name}
   
 ## Run
 
